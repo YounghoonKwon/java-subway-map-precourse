@@ -17,7 +17,7 @@ public class Line {
 
     public void validateLength(String name){
         if (name.length() < 2){
-            throw new SubwayException("이름은 2이상");
+            throw new SubwayException("노선 이름은 2글자 이상이어야 합니다");
         }
     }
 

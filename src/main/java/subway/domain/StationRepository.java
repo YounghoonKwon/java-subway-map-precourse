@@ -21,7 +21,7 @@ public class StationRepository {
         stations.stream()
                 .filter(station -> station.getName().equals(name))
                 .findAny()
-                .orElseThrow(() -> new SubwayException("삭제할 역이 없음"));
+                .orElseThrow(() -> new SubwayException("해당 역이 존재하지 않습니다"));
 
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
@@ -36,7 +36,7 @@ public class StationRepository {
         return stations.stream()
                 .filter(station -> station.getName().equals(name))
                 .findAny()
-                .orElseThrow(() -> new SubwayException("입력하신 역이 없습니다"));
+                .orElseThrow(() -> new SubwayException("해당 역이 존재하지 않습니다"));
     }
 
     public static boolean isExist(String name) {

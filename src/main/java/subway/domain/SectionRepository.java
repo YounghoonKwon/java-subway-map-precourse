@@ -24,4 +24,11 @@ public class SectionRepository {
     public static void deleteSection(Line lineToDelete) {
         sections.remove(lineToDelete);
     }
+
+    public static void deleteStationByName(String stationName){
+        sections()
+                .values()
+                .stream()
+                .forEach(stations -> stations.deleteStationByName(stationName));
+    }
 }

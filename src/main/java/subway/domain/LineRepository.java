@@ -31,7 +31,7 @@ public class LineRepository {
         lines.stream()
                 .filter(line -> line.getName().equals(name))
                 .findAny()
-                .orElseThrow(() -> new SubwayException("삭제할 노선이 없음"));
+                .orElseThrow(() -> new SubwayException("삭제할 노선이 존재하지 않습니다"));
         return lines.removeIf(line -> Objects.equals(line.getName(), name));
     }
 

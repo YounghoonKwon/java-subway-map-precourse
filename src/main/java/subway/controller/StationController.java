@@ -2,6 +2,7 @@ package subway.controller;
 
 import static subway.constants.Constants.*;
 
+import subway.domain.SectionRepository;
 import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.exception.SubwayException;
@@ -19,7 +20,9 @@ public class StationController {
 
     public static void deleteStation() {
         OutputView.showPrompt(STATION, DELETE);
-        StationRepository.deleteStationByName(InputView.getInput());
+        String stationToDelete = InputView.getInput();
+        SectionRepository.deleteStationByName(stationToDelete);
+        StationRepository.deleteStationByName(stationToDelete);
         OutputView.showCompletionMessage(STATION, DELETE);
     }
 
